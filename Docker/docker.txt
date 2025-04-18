@@ -1,0 +1,22 @@
+docker pull hello-world
+docker run hello-world
+
+docker run-it ubuntu
+exit
+mkdir juet
+ls
+cd juet
+ls
+touch hello.js
+ls
+exit
+docker stop <id>
+#Let 2 containers talk without hasle [mongo , mongo-express]
+docker network ls
+docker network create mongo-network
+docker network ls
+docker run -d -p 27017:27017-- name mongo --network mongo_network -e MONGO_INITDB_ROOT_USERNAME=admin-e
+MONGO_INITDB_ROOT_PASSWORD=admin mongo
+docker network inspect mongo-network
+docker run -d -p 8081:8081--name mongo -express --network mongo -network -e ME_CONFIG_MONGO DB_ADMINUSER NAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD =admin -e ME_CONFIG_MONGODB_URL="mongodb ://admin:admin@mongo:27017" mongo-express
+mongo-express is an admin interface to connect to the mongoDB database
